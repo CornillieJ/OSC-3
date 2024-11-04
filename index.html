@@ -1,0 +1,700 @@
+<html><head><link rel="stylesheet" href="./css/mainstyle.css">
+	<link rel="stylesheet" href="./css/pe.css"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Assignment 3</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1349a137-d71d-8027-bc16-dbf9b8890e9d" class="page sans"><header><h1 class="page-title">Assignment 3</h1><p class="page-description"></p></header><div class="page-body"><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="1349a137-d71d-800e-acc2-ea940b2058aa"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="f0129884-a54a-4f77-a053-d5fc3a59f4b8" class="">For your convenience I have created this with collapsible segments for easier reading. These segments do not work in pdf or doc, so please go to <a href="https://cornilliej.github.io/OSC-3/">https://cornilliej.github.io/OSC-3/</a> to get an easier to read version of this file.</p></div></figure><ul id="1349a137-d71d-80de-b234-c17b03a2b7b5" class="toggle"><li><details ><summary>Install a c compiler(gcc), a building tool (make) and your favorite editor:  </summary><ol type="1" id="1349a137-d71d-808a-86b4-c2076b3b81f6" class="numbered-list" start="1"><li>sudo apt install gcc gdb g++ make strace vim nano -y</li></ol></details></li></ul><ul id="1349a137-d71d-80af-9b55-cd39ad87b7db" class="toggle"><li><details ><summary>Let’s search for the correct linux headers of our system:</summary><ul id="1349a137-d71d-801c-b9aa-cd93a5160914" class="toggle"><li><details ><summary>apt search linux-headers-$(uname -r)</summary><p id="1349a137-d71d-801f-a7b0-c0787fd7016a" class="">Header files for Linux 6.1.0-25-amd64</p></details></li></ul><ul id="1349a137-d71d-809f-9065-dac5aec79355" class="toggle"><li><details ><summary>Install the linux headers (change numbers if needed):</summary><p id="1349a137-d71d-80b7-987f-c67890c6c7c0" class="">sudo apt install linux-headers-6.1.0-25-amd64 -y</p></details></li></ul></details></li></ul><ul id="1349a137-d71d-80f9-b445-ddcaf2722788" class="toggle"><li><details ><summary>Let’s try to create our helloworld program in a separate folder.</summary><ul id="1349a137-d71d-8057-b9b8-e4e6adbabb37" class="toggle"><li><details ><summary>Create a new folder: </summary><p id="1349a137-d71d-80a7-acda-c31d4746366b" class=""><em>mkdir helloworld</em></p></details></li></ul><ul id="1349a137-d71d-804a-a317-c46de896a122" class="toggle"><li><details ><summary>Go in the folder helloworld: </summary><p id="1349a137-d71d-808c-a921-fbdb6234cb6a" class=""><em>cd helloworld</em></p></details></li></ul><ul id="1349a137-d71d-80e1-a4a2-df6a0faf7962" class="toggle"><li><details ><summary>Create a new file hello.c: </summary><p id="1349a137-d71d-80a8-8638-d91a8dacab79" class="">vim hello.c</p></details></li></ul><ul id="1349a137-d71d-8079-852b-f0c42ac637c3" class="toggle"><li><details ><summary>On the cli type:</summary><p id="1349a137-d71d-80d6-af3d-ceede47d9196" class="">make hello</p></details></li></ul></details></li></ul><ul id="1349a137-d71d-80e1-a9ce-c80eba3faaa2" class="toggle"><li><details ><summary>Look at the contents of your current directory (<em>ls</em>). A new file was created. Wat is the extension?</summary><p id="1349a137-d71d-805a-9852-d93e44abf7c6" class="">The new File does not have an extension. It is an executable file</p></details></li></ul><ul id="1349a137-d71d-8083-886d-cba39bd0eb8f" class="toggle"><li><details ><summary>Try to cat the contents of this new file. What do you see?</summary><p id="1349a137-d71d-8092-b60d-df5bb5e2f144" class="">Lots of gibberish, The binary machine code is attempted to be translated into text.</p><figure id="1349a137-d71d-80e7-81f3-fa3f0e5dd7fa" class="image"><a href="image.png"><img style="width:624px" src="image.png"/></a></figure></details></li></ul><ul id="1349a137-d71d-8026-b1e4-eeb195b2ecbe" class="toggle"><li><details ><summary>Try to use the <em>file</em> command to know what type of file this is (file hello)?</summary><p id="1349a137-d71d-8090-aea0-e5ef0ea826ac" class="">It is a 64-bit executable for GNU/Linux 3.2.0</p></details></li></ul><ul id="1349a137-d71d-80db-8c61-ca01215437bd" class="toggle"><li><details ><summary>Run the program by typing ./hello You should see “Hello World!”</summary><figure id="1349a137-d71d-80a8-8172-fc81b8bc6152" class="image"><a href="image%201.png"><img style="width:708px" src="image%201.png"/></a></figure></details></li></ul><ul id="1349a137-d71d-80f0-85a8-f8214c2f66b1" class="toggle"><li><details ><summary>Let’s create a testcrash.c file in a separate folder.</summary><p id="1349a137-d71d-8096-ad6c-e840c75832d8" class="">Go back one level (cd ..)</p><ul id="1349a137-d71d-80c5-9ffa-d4d9b4fba341" class="toggle"><li><details ><summary>Create a new folder: </summary><p id="1349a137-d71d-80d6-850f-ec60f24c4fc0" class="">mkdir testcrash</p></details></li></ul><ul id="1349a137-d71d-806d-b031-e99188433d29" class="toggle"><li><details ><summary>Go in the folder: </summary><p id="1349a137-d71d-80a0-b44d-f4a960a27a3a" class="">cd testcrash</p></details></li></ul></details></li></ul><ul id="1349a137-d71d-8085-b657-c948e3fe7aa7" class="toggle"><li><details ><summary>Create a two file testcrash[1|2|3].c</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1349a137-d71d-8049-90c1-d4eb99fdfdc5" class="code"><code class="language-C">#include &lt;stdio.h&gt;
+
+int main(){
+	int *p = 0 ;
+	printf(&quot;%d\n&quot;, ????p);
+	return 0 ;
+}</code></pre></details></li></ul><ul id="1349a137-d71d-80dd-9a82-ca6c1ef5d046" class="toggle"><li><details ><summary>One program should display the address of the pointer, the other the content of the pointer, the last one the value of the pointer</summary><p id="1349a137-d71d-8082-88ac-e4640db2d571" class="">The ??? should be replaced by </p><ol type="1" id="1349a137-d71d-80a5-88f2-e680c01d4cd0" class="numbered-list" start="1"><li>*(Address)</li></ol><ol type="1" id="1349a137-d71d-80b7-8a09-e478e822319d" class="numbered-list" start="2"><li> &amp;(content)</li></ol><ol type="1" id="1349a137-d71d-80b4-be36-cd9524857c56" class="numbered-list" start="3"><li>nothing(Value)</li></ol></details></li></ul><ul id="1349a137-d71d-807d-9be6-c0ba566eb969" class="toggle"><li><details ><summary>Do once again a “make testcrash1” and a “./testcrash2” and a “./testcrash3”</summary><ul id="1349a137-d71d-808d-9b56-fa2caea72140" class="toggle"><li><details ><summary><strong>What happens when you run them ?</strong></summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1349a137-d71d-8060-acc2-dbd1a895b887" class="code"><code class="language-Bash">chris@debian-virtualbox:~/osc/testcrash$ ./testcrash1
+2087452104
+chris@debian-virtualbox:~/osc/testcrash$ ./testcrash2
+Segmentation fault
+chris@debian-virtualbox:~/osc/testcrash$ ./testcrash3
+0</code></pre><p id="1349a137-d71d-80fc-be52-d062eb95a735" class="">In the testcrash2.c file we did something that is not allowed. Refer to the theory why this is an invalid operation. </p></details></li></ul><ul id="1349a137-d71d-80a3-bf7d-defa69c57167" class="toggle"><li><details ><summary>Explain what is printed in the different senarios. Where are they located on the address space ?</summary><ol type="1" id="1349a137-d71d-80e7-8dd0-dcf1c44d0cba" class="numbered-list" start="1"><li>The number is the location of the Address of  p. This is result of printing *p</li></ol><ol type="1" id="1349a137-d71d-807a-88eb-f2c580e23e68" class="numbered-list" start="2"><li>The segfault is the result of dereferencing a null pointer, the pointer does not point to a valid address in memory. Which results in the infamous seg fault. this is the result of printing &amp;p<figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="1349a137-d71d-8012-bc12-e8574d934564"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1349a137-d71d-80eb-94cd-cdda650c91e7" class="">Watch this:</p><p id="1349a137-d71d-80e5-a681-d6d7d98b5283" class=""><a href="https://www.youtube.com/watch?v=bLHL75H_VEM">https://www.youtube.com/watch?v=bLHL75H_VEM</a></p></div></figure></li></ol><ol type="1" id="1349a137-d71d-8096-9665-e9c879864088" class="numbered-list" start="3"><li>The 0 is simply the value of the pointer. this is the result of printing p</li></ol></details></li></ul></details></li></ul><ul id="1349a137-d71d-80a2-939e-d74665f281d2" class="toggle"><li><details ><summary>No problem though as this program ran in userspace. Now we will try to do a similar thing but in a kernel module. In other words we will create a program that will run in kernel space!</summary><p id="1349a137-d71d-8091-ab2a-dea2144932f2" class="">Create 2 folders “spyro” and “bandicoot” – mkdir bandicoot</p><p id="1349a137-d71d-80d5-8300-e06adeb1a5a0" class="">In these folders create a “Makefile” with no extension. In the spyro folder create a “spyro.c” and in the bandicoot folder create “bandicoot.c”.</p><p id="1349a137-d71d-805f-b631-ef4b7e71201c" class="">Paste the following contents in the Makefile. Note the tab before make! This might cause issues when copying. Replace the bandicoot.o to spyro.o for the other makefile.</p><ul id="1349a137-d71d-8091-a76a-d552340c8997" class="toggle"><li><details ><summary>Paste the following contents in “spyro.c”</summary><figure id="1349a137-d71d-801e-874d-e815aee88ede" class="image"><a href="image%202.png"><img style="width:602px" src="image%202.png"/></a></figure></details></li></ul><ul id="1349a137-d71d-806c-9e0c-c813ebb7b044" class="toggle"><li><details ><summary>On the cli type: make</summary><figure id="1349a137-d71d-80ca-8dde-c8ce5914d6b7" class="image"><a href="image%203.png"><img style="width:651.9750366210938px" src="image%203.png"/></a></figure></details></li></ul><p id="1349a137-d71d-80a3-a72e-e0a67f450170" class="">Open a new shell or tty (through ssh or with “alt and f2”) and type:  (sudo or as root) dmesg -w</p><ul id="1349a137-d71d-8096-ac6f-cffa9a46891d" class="toggle"><li><details ><summary>Next we will insert/activate the kernel module in the kernel. As root with (su -) or with sudo: insmod spyro.ko</summary><figure id="1349a137-d71d-802c-9087-c3ba4c7223e2" class="image"><a href="image%204.png"><img style="width:651.9750366210938px" src="image%204.png"/></a></figure></details></li></ul><ul id="1349a137-d71d-80c5-9a73-d8b01eb18993" class="toggle"><li><details ><summary>To be sure you can check all modules by issuing the lsmod Try to grep on spyro. Is it in the list? Now remove the module with rmmod spyro. Try to grep again. It should be gone. Take a look at the /var/log/messages. If everything went right you should see our info messages.</summary><figure id="1349a137-d71d-8098-95c6-d4ca3353f637" class="image"><a href="image%205.png"><img style="width:651.9874877929688px" src="image%205.png"/></a></figure></details></li></ul><p id="1349a137-d71d-80e3-a5dd-ec2059d97edf" class="">Congratz!</p><ul id="1349a137-d71d-808e-818c-eb0ff559b700" class="toggle"><li><details ><summary>Let’s continue with bandicoot.c. Put the following code in the file.</summary><figure id="1349a137-d71d-804d-8928-d5716bb9112b" class="image"><a href="image%206.png"><img style="width:542px" src="image%206.png"/></a></figure></details></li></ul><ul id="1349a137-d71d-8086-9453-e5e7f973a6eb" class="toggle"><li><details ><summary>Once again, insert the module and try to remove it. You will see it won’t work, (why?). Now take a look at the /var/log/messages. What do you see?</summary><figure id="1349a137-d71d-8027-bb00-f9a114a5ce5d" class="image"><a href="image%207.png"><img style="width:651.9874877929688px" src="image%207.png"/></a></figure><figure id="1349a137-d71d-80c0-8c81-ea9602aa0001" class="image"><a href="image%208.png"><img style="width:651.9750366210938px" src="image%208.png"/></a></figure></details></li></ul><p id="1349a137-d71d-802c-a32a-c9dbbe885a27" class="">In the directory with bandicoot.c type “make clean”. All generated files should disappear. Copy bandicoot.c to crashbandicoot.c and replace bandicoot to crashbandicoot in the Makefile.<div class="indented"><p id="1349a137-d71d-80c5-b09c-efc2b3c9db0e" class="">
+</p></div></p><ul id="1349a137-d71d-8008-b63e-ee9975aef039" class="toggle"><li><details ><summary>Now paste the following in crashbandicoot.c and do the same (be careful to only run this in a virtual machine that has a snapshot ;)</summary><figure id="1349a137-d71d-8022-bddf-dd4844590b41" class="image"><a href="image%209.png"><img style="width:665px" src="image%209.png"/></a></figure></details></li></ul><ul id="1349a137-d71d-805a-8f9a-c03524525fd3" class="toggle"><li><details ><summary>Explain why we get a freeze and why we got a segmentation fault previously.</summary><p id="1349a137-d71d-805c-a183-c4ef2772f63b" class="">Because panic() was called, which is a safety feature in the kernel that automatically stops and crashes the system to protect from vulnerabilities. While a seg fault is something the kernel can deal with</p></details></li></ul><p id="1349a137-d71d-802f-9f3c-e06e8e62cae7" class="">
+</p></details></li></ul><h1 id="1349a137-d71d-80a5-86c8-d25851962059" class="">Pointers &amp; Memory addresses in c</h1><p id="1349a137-d71d-8053-8435-ee924b55fea0" class="">Whenever a variable is defined in C, a memory location is assigned to it. At this memory location the value of the variable is stored. You can check this memory address with the “&amp;” symbol.</p><p id="1349a137-d71d-80d8-a894-e0ca8eff92e5" class="">Go ahead and try to run the following code by creating a “var.c”-file and running “make var” or “gcc var.c -o var”.  Afterwards run it by typing “./var” on the commandline.</p><p id="1349a137-d71d-80ce-820e-fdd582c89ca0" class="">To retrieve (or access) the value 10, we could use the name of the variable (a). Another way to get the value is telling the system to look at the exact location (address). Imagine having your smartphone laying on a table. You could ask “could you hand me over my smartphone” or “could you hand me over what is on the table”. In the latter you hope the table is not something like this:</p><p id="1349a137-d71d-807e-a9b7-f082bf84f299" class="">This is exactly the reason why it is important to only use the memory you need for the stuff you put there! No need to have 1.000.000.000 bytes to store one integer value.</p><p id="1349a137-d71d-807f-9d47-ca7ef673f3e6" class="">So how do we access a variable using it’s address? The answer is <strong>pointers! </strong>We will create a <span style="border-bottom:0.05em solid">new variable</span> that has as value the address of our variable.</p><ul id="1349a137-d71d-8070-a7f0-d2ea4d585ab9" class="toggle"><li><details ><summary>Now try to predict the output of the following program and afterwards run it to check your answer. After running, try to answer the “what happens here”- questions.</summary><figure id="1349a137-d71d-8009-ad7a-ebae58113c43" class="image"><a href="image%2010.png"><img style="width:679.9874877929688px" src="image%2010.png"/></a></figure></details></li></ul><p id="1349a137-d71d-8084-8287-dbe6c9fb8c9e" class="">Up until now we only created variables that store int’s. What about objects? Well it is actually the same. You have objects on a memory location and it is possible to have pointers “pointing” at the address locations of the objects. There is only one small problem when talking about objects like you know them from java. C does not have classes, it does have structs… don’t worry about the details.</p><p id="1349a137-d71d-80ba-be57-f3505690036e" class="">Global variables, static variables and program instructions get their memory in a permanent storage area whereas local variables are stored in a memory area called the “Stack”. The memory space between these two region is known as the “Heap” area. This region is used for dynamic memory allocation during execution of the program. The programmer is responsible for allocating and freeing this memory!</p><p id="1349a137-d71d-80a7-91f5-d5f322883f5b" class="">The following program illustrates how one can allocate memory dynamically with the help of malloc. You can always take a look at the man-page of malloc. C does not understand strings by design. But it does understand characters. Luckily for us multiple characters form a string! Imagine having a vector/array/table (= these are all the same in this context) of char’s. The string “hello” is the same as a collection (array) with h on index 0, e on index 1,…</p><p id="1349a137-d71d-8072-8ea1-c52acb056c59" class="">Note: we need something to finish the sequence! Something to tell “this is the end of my string”. This is is a “\0”.</p><p id="1349a137-d71d-80c6-af2d-e5ac00160a07" class="">
+</p><ul id="1349a137-d71d-80f9-9dd6-d52ec9c6aaa7" class="toggle"><li><details ><summary>Run the program and try some things out:</summary><ul id="1349a137-d71d-802f-ab09-eaf3c8617cf1" class="bulleted-list"><li style="list-style-type:disc">Run it normally (no unexpected behavior).</li></ul><ul id="1349a137-d71d-80f5-a942-f15278d6dfa9" class="bulleted-list"><li style="list-style-type:disc">Run it where your limit is 1 and you put a really long sequence of characters.<ul id="1349a137-d71d-80c1-874b-e62f756a2bda" class="bulleted-list"><li style="list-style-type:circle">the text will be printed until a nul \0 is found. an array in c simply points to the first memory location of that array</li></ul></li></ul><ul id="1349a137-d71d-8081-b85d-e6a704eed9f6" class="bulleted-list"><li style="list-style-type:disc">Run it and try to put text as limit.</li></ul></details></li></ul><ul id="1349a137-d71d-80b7-b08f-f60b5718d623" class="toggle"><li><details ><summary>Finally, why do you think it is important to free your memory with free()? </summary><p id="1349a137-d71d-806d-abce-ea4227e45648" class="">To  reduce memory leaks.memory blocks that are taken in by the program but never freed up again resulting in a lot of memory use.</p><p id="1349a137-d71d-80ed-9fd9-fdb8c217d7f6" class="">
+</p></details></li></ul><p id="1349a137-d71d-8082-a963-e1f73c9abea4" class="">Try to remove (or put the free in comments) and recompile. Now use the tool valgrind (apt install valgrind) on your program.</p><p id="1349a137-d71d-8096-b744-cbf20de46fbb" class="">Recompile again with a correct free and the same limit and input.</p><ul id="1349a137-d71d-8043-a1ea-d802bf24d967" class="toggle"><li><details ><summary>What does the tool tell you now? Finally try to run valgrind when you try to put too many characters.</summary><p id="1349a137-d71d-8005-9e50-ef840b19aa9a" class="">valgrind: Heap block lo/hi size mismatch: lo = 80, hi = 7378697629483820646.</p></details></li></ul><p id="1349a137-d71d-80d7-8adf-d5b04cb6bbe3" class="">This is probably caused by your program erroneously writing past the</p><p id="1349a137-d71d-8025-8ace-e76ca95288c0" class="">end of a heap block and corrupting heap metadata.  If you fix any</p><p id="1349a137-d71d-80d8-ad65-d3044cc48107" class="">invalid writes reported by Memcheck, this assertion failure will</p><p id="1349a137-d71d-80fe-a6cc-ff1550dc7414" class="">probably go away.  Please try that before reporting this as a bug.</p><p id="1349a137-d71d-805f-a3ce-dbc6a347cd91" class="">If you are interested in more C you can look at <a href="https://www.studytonight.com/c/overview-of-c.php">https://www.studytonight.com/c/overview-of-c.php</a> for a brief overview, most images and the above exercises found their origin there. Do remember that C or C++ is not material for the exam!</p><p id="1349a137-d71d-80f1-926f-e40d449e274f" class="">For those who are interested in C++, instead of using malloc they introduce the keyword “new”. This should sound familiar from Java ;) Modern C++ (from C++11) even introduced the concept of smart pointers. By using this mechanism, you don’t have to remember to free your memory! A lot safer and less error prone.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

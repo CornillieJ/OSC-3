@@ -1,0 +1,100 @@
+body {
+    background-color: rgb(104, 104, 104);
+    background-image: url("../images/warty.png");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+}
+
+p::selection,
+h1::selection,
+h2::selection,
+footer::selection,
+a::selection {
+    color: rgb(197, 110, 148);
+}
+
+nav {
+    width: 60%;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    justify-content: flex-start;
+}
+
+nav ul li {
+    align-self: flex-start;
+    list-style: none;
+    width: 5rem;
+    padding: 0.5rem 2rem;
+    background-color: rgb(31, 31, 31);
+    border-bottom: solid white 2px;
+    border-radius: 40px;
+    box-shadow: 2px 2px 4px white;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0.5rem 3rem;
+}
+
+nav ul li:hover {
+    position: relative;
+    top: 4px;
+    box-shadow: 2px 2px 4px rgb(153, 80, 113);
+}
+
+nav ul li:hover a {
+    color: rgb(153, 80, 113);
+    transition: 0.3s;
+}
+
+h1,
+h2 {
+    color: rgb(167, 174, 180);
+    border-bottom: 1px solid;
+}
+
+h1 {
+    font-size: 34px;
+}
+
+h2 {
+    font: 30px;
+}
+
+article {
+    background-color: rgba(41, 41, 41, 0.527);
+    width: 80%;
+    border-radius: 20px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 30px;
+    color: rgba(29, 29, 29, 0.781);
+    z-index: 5;
+}
+
+.logo-links {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.name {
+    color: white;
+    font-size: larger;
+}
